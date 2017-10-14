@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    /*background-color: #C8E6C9;*/
+    color: ;
+}
+
+#left{
+    background-color: blue;
+    height: 200px;
+}
