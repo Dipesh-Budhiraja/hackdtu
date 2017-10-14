@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var csrf =  require('csurf');
+var passport = require('passport')
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
@@ -13,15 +14,21 @@ router.get('/signin',function(req,res,next){
     // var messages=req.flash('error');
     res.render('user/signin',{csrfToken:req.csrfToken()});
 })
-
+router.get('/profile',function (req,res,next) {
+    res.render('user/signin')
+})
 router.get('/signup',function(req,res,next){
-    // var messages=req.flash('error');
-    res.render('user/signup',{csrfToken:req.csrfToken()});
+    var messages=req.flash('error');
+    console.log('in signup');
+    res.render('user/signup',{csrfToken:req.csrfToken(),messages:messages,hasErrors:messages.length>0});
 })
 
-router.post('/signup',function(req,res,next){
-
-})
+router.post('/signup',passport.authenticate('local-signup',{
+    successRedirect:'/users/profile',
+    failureRedirect:'/users/signup',
+    badRequestMessage:'badRequestMessage',
+    failureFlash:true
+}))
 router.post('/signin',function (req,res,next){
 
 })
