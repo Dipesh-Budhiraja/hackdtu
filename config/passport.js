@@ -20,9 +20,11 @@ passport.use('local-signup',new LocalStrategy({
     function (req,username,password,done) {
         // console.log(req.body);
         req.checkBody('email','invalid Email').notEmpty().isEmail();
+
         req.checkBody('password','invalid password').notEmpty().isLength({min:8});
         req.checkBody('phoneNumber','invalid pphone number').notEmpty().isLength(10);
         req.checkBody('username','invalid username').notEmpty();
+
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
