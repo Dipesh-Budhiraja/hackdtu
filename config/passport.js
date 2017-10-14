@@ -72,11 +72,13 @@ passport.use('local-signin', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
 }, function(req, username, password, done){
+    console.log('987654');
     req.checkBody('username', 'Invalid Email').notEmpty();
     req.checkBody('password', 'Invalid Password').notEmpty();
 
     var errors = req.validationErrors();
     if(errors){
+        console.log('in if');
         var messages = [];
         errors.forEach(function(error){
             messages.push(error.msg);
@@ -85,15 +87,29 @@ passport.use('local-signin', new LocalStrategy({
     }
 
     User.findOne({'username': username}, function(err, user){
+        console.log('trying to find if');
+        console.log(user);
+        console.log();
         if(err){
+            // console.log('yahan aaya error1');
             return done(err);
+            // continue;
         }
         if(!user){
+            // console.log();
+            console.log('yahan aaya error2');
+
             return done(null, false, {message: 'No User Found.'});
         }
-        if(!user.validatePassword(password)){
-            return done(null, false, {message: 'Wrong Password'});
-        }
-        return done(null, user);
+        else{
+            if(!user.validatePassword(password)){
+                console.log('yahan aaya error3');
+        //
+                return done(null, false, {message: 'Wrong Password'});
+            }
+            else{
+            console.log('yahan aaya error4');
+            return done(null, user);
+        }}
     });
 }));

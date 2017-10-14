@@ -14,7 +14,7 @@ var schema = mongoose.Schema({
 schema.methods.encryptPassword = function (password) {
     return bcrypt.hashSync(password,bcrypt.genSaltSync(5),null);
 }
-schema.methods.validatePassword = (password)=>{
+schema.methods.validatePassword = function (password) {
     return bcrypt.compareSync(password,this.password)
 }
 
