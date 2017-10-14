@@ -50,6 +50,7 @@ passport.use('local-signup',new LocalStrategy({
             newUser.name = req.body.name;
             newUser.dlnumber = req.body.dl;
             newUser.adhaarNo = req.body.aadhar;
+            newUser.packageType = req.body.package;
             newUser.save(function(err, result){
                 if(err){
                     return done(err);
@@ -70,7 +71,7 @@ passport.use('local-signin', new LocalStrategy({
     usernameField:'username',
     passwordField: 'password',
     passReqToCallback: true
-}, function(req, email, password, done){
+}, function(req, username, password, done){
     req.checkBody('username', 'Invalid Email').notEmpty();
     req.checkBody('password', 'Invalid Password').notEmpty();
 

@@ -5,26 +5,37 @@ mongoose.connect('localhost:27017/EcoRide');
 
 var cars = [
     new Car({
-        imagePath: 'https://img.gaadicdn.com/car-images/carexteriorimages/large/Maruti/Maruti-Ritz/front-right-view-120.jpg',
-        modelName: 'Maruti Ritz',
+        imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
+        model_name: 'Ritz',
         carId: 10101,
-        distanceDriven: 1000,
-        category : 'normal',
-        capacity : 4,
-        dateofMfd: '23/04/2015',
-        numberplate: 'DL 1AF 8139',
-        price: 450000
+        distanceDriven: 1020,
+        category: 'prime',
+        capacity: 4,
+        year: 2015,
+        numberplate: 'DL 1AC 9392',
+        insuranceId: 1123
     }),
     new Car({
-        imagePath: 'https://media.zigcdn.com/media/model/2017/May/sift_600x300.jpg',
-        modelName: 'Maruti Swift',
-        carId: 10103,
-        distanceDriven: 3000,
-        category : 'prime',
-        capacity : 5,
-        dateofMfd: '23/04/2013',
-        numberplate: 'DL 2AC 4157',
-        price: 550000
+        imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
+        model_name: 'Swift',
+        carId: 10104,
+        distanceDriven: 3020,
+        category: 'prime',
+        capacity: 5,
+        year: 2016,
+        numberplate: 'DL 1AC 9811',
+        insuranceId: 1126
+    }),
+    new Car({
+        imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
+        model_name: 'Honda City',
+        carId: 10110,
+        distanceDriven: 10200,
+        category: 'sedan',
+        capacity: 5,
+        year: 2014,
+        numberplate: 'DL 2AC 6191',
+        insuranceId: 1023
     })
 ];
 
