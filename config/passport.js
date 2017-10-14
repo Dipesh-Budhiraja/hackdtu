@@ -19,8 +19,8 @@ passport.use('local-signup',new LocalStrategy({
     },
     function (req,username,password,done) {
         req.checkBody('email','invalid Email').notEmpty().isEmail();
-        req.checkBody('password','invalid password').notEmpty().isLeght({min:10});
-        
+        req.checkBody('password','invalid password').notEmpty().isLenght({min:10});
+
     }
 
 

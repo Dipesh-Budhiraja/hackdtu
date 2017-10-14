@@ -28,6 +28,9 @@ app.use(session({
     saveUninitialized:false,
     cookie:{maxAge:180*60*1000}
 }))
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
