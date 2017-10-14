@@ -1,11 +1,31 @@
 body{
     margin: 0;
     padding: 0;
-    /*background-color: #C8E6C9;*/
+    /*
+    background-image: url("../../img/2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
     color: ;
 }
 
 #left{
-    background-color: blue;
-    height: 200px;
+    background-color: #8BC34A;
+    width:400px;
+    padding-top:100px;
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    position:fixed;
+    height:100%;
+}
+
+#signUp{
+  text-align: left;
+	background:#8BC34A;
+	display:block;
+	color:white;
+}
+
+#signUp:hover{
+	border: 1px solid #8BC34A;
+	background-color: #fff !important;
+	color: #8BC34A;
 }
