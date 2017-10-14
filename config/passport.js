@@ -20,12 +20,9 @@ passport.use('local-signup',new LocalStrategy({
     function (req,username,password,done) {
         console.log(req.body);
         req.checkBody('email','invalid Email').notEmpty().isEmail();
-<<<<<<< HEAD
-        req.checkBody('password','invalid password').notEmpty().isLenght({min:10});
 
-=======
         req.checkBody('password','invalid password').notEmpty().isLength({min:10});
-        req.checkBody('phoneNumber','invalid pphone number').notEmpty().isLength(10);
+        req.checkBody('phoneNumber','invalid phone number').notEmpty().isLength(10);
         req.checkBody('username','invalid username').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
@@ -60,7 +57,6 @@ passport.use('local-signup',new LocalStrategy({
             });
             // console.log(req.body);
         })
->>>>>>> 248810d2046c2fd0e3db4202502ee217886636c6
     }
 ))
 
