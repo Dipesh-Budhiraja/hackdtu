@@ -11,8 +11,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/signin',function(req,res,next){
     // var messages=req.flash('error');
-    res.render('user/signup-login',{csrfToken:req.csrfToken()});
+    res.render('user/signin',{csrfToken:req.csrfToken()});
 })
+
+router.get('/signup',function(req,res,next){
+    // var messages=req.flash('error');
+    res.render('user/signup',{csrfToken:req.csrfToken()});
+})
+
 router.post('/signup',function(req,res,next){
 
 })
