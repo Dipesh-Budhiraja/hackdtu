@@ -2,7 +2,7 @@ const passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
-passport.serializeUser(function(err,done){
+passport.serializeUser(function(user,done){
     done(null,user.id);
 })
 
@@ -18,11 +18,11 @@ passport.use('local-signup',new LocalStrategy({
         passReqToCallback:true
     },
     function (req,username,password,done) {
-        console.log(req.body);
+        // console.log(req.body);
         req.checkBody('email','invalid Email').notEmpty().isEmail();
-        req.checkBody('password','invalid password').notEmpty().isLength({min:10});
+        req.checkBody('password','invalid password').notEmpty().isLength({min:8});
         req.checkBody('phoneNumber','invalid pphone number').notEmpty().isLength(10);
-        req.checkBody('username','invalid username').notEmpty().isLength({min:10});
+        req.checkBody('username','invalid username').notEmpty();
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
         // req.checkBody('password','invalid password').notEmpty().isLength({min:10});
@@ -46,13 +46,16 @@ passport.use('local-signup',new LocalStrategy({
             newUser.password = newUser.encryptPassword(password);
             newUser.phoneNumber = req.body.phoneNumber;
             newUser.name = req.body.name;
-            newUser.DLnumber = req.body.dl;
-            newUser.AdhaarNo = req.body.adhaar;
+            newUser.dlnumber = req.body.dl;
+            newUser.adhaarNo = req.body.aadhar;
             newUser.save(function(err, result){
                 if(err){
-                    done(err);
+                    return done(err);
                 }
-                return done(null, newUser);
+                else{
+                    console.log('hogya save');
+                    return done(null, newUser);
+                }
             });
             // console.log(req.body);
         })

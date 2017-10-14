@@ -10,26 +10,25 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/profile',function (req,res,next) {
+    res.render('user/signin');
+})
 router.get('/signin',function(req,res,next){
     // var messages=req.flash('error');
     res.render('user/signin',{csrfToken:req.csrfToken()});
 })
-router.get('/profile',function (req,res,next) {
-    res.render('user/signin')
-})
 router.get('/signup',function(req,res,next){
     var messages=req.flash('error');
-    console.log('in signup');
+    // console.log('in signup');
     res.render('user/signup',{csrfToken:req.csrfToken(),messages:messages,hasErrors:messages.length>0});
 })
 
 router.post('/signup',passport.authenticate('local-signup',{
-    successRedirect:'/users/profile',
-    failureRedirect:'/users/signup',
-    badRequestMessage:'badRequestMessage',
+    successRedirect:'/profile',
+    failureRedirect:'/signup',
     failureFlash:true
 }))
-router.post('/signin',function (req,res,next){
-
-})
+// router.post('/signin',function (req,res,next){
+//
+// })
 module.exports = router;
