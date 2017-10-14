@@ -23,7 +23,7 @@
       color: #212121;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  }
 
   @media screen and (max-width: 768px) {
     .col-sm-4 {
@@ -66,9 +66,39 @@
 	max-width:700px;
 }
 
+#leaf{
+	position:absolute;
+	margin-left:125px;
+	margin-top:25px;
+}
+
+#globe{
+	position:absolute;
+	padding-left:125px;
+	padding-top:75px;
+}
+
+#signUp{
+	text-align:center;
+	background:#8BC34A;
+	display:block;
+	margin:0 auto 10px auto;
+	color:white;
+}
+
+#signUp:hover{
+	border: 1px solid #8BC34A;
+	background-color: #fff !important;
+	color: #8BC34A;
+}
+
+#sign:hover{
+	underline:none;
+}
+
 /* new */
 .panel {
-      border: 1px solid #8BC34A; 
+      border: 1px solid #8BC34A;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -106,6 +136,10 @@
       color: #fff;
   }
 
+fixw,.fixw1,.fixw2{
+		min-height:400px;
+}
+
   </style>
 </head>
 <body id = "myPage">
@@ -116,7 +150,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#myPage">Travel Easy</a>
     </div>
@@ -125,7 +159,7 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="insert link"></a>LOGIN</li>
+        <li><a href="login.html">LOGIN</a></li>
       </ul>
     </div>
   </div>
@@ -135,16 +169,8 @@
 <!-- jumbotron-->
 
 <div class="jumbotron text-center">
-  <h1 id = "mh">Eco-Ride</h1> 
-  <p id = "mhp">A MAAS solution for the Indian Traveller</p> 
-  <form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <a href = "insert link here" class="btn btn-danger">Subscribe</a>
-      </div>
-    </div>
-  </form>
+  <h1 id = "mh">Eco-Ride</h1>
+  <p id = "mhp">A MAAS solution for the Indian Traveller</p>
 </div>
 
 <!--Container - About-->
@@ -152,13 +178,13 @@
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h1><strong>About Us</strong></h1><br>
+      <h1><strong>About Us</strong></h1>
       <h3>The Perfect Solution To Your Travel Hassles</h3><br>
       <h4>We at Eco-Ride bring to you the very first 'Mobility as a Service' prototype that attempts to change the way we travel n NCR. The need for a personal vehicle does not exist anymore, no more worries of extended warranties or car repair services! Get your ride from Vroom and drive or be driven to anywhere and everywhere. Moreover, we're paving way for more livable cities and better public spaces. </h4>
      <!-- <br><button class="btn btn-default btn-lg" href = "#contact">Get in Touch</button>-->
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo"></span>
+      <span class="glyphicon glyphicon-leaf logo" id="leaf"></span>
     </div>
   </div>
 </div>
@@ -166,15 +192,16 @@
 <div class="container-fluid bg-grey" id = "about2">
   <div class="row">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+      <span class="glyphicon glyphicon-globe logo slideanim" id="globe"></span>
     </div>
     <div class="col-sm-8">
-      <h1>Our Goal</h1><br>
+      <h1><strong>Our Goal</strong></h1><br>
       <h4><strong>Digital Movement-Urban Convenience:</strong> The primary target that we plan to achieve is the incoming of a new consumer-transport relationship. The process of commuting is one click away and the only things you need are an Eco-Ride subcription and a few personal details that we require to get you your best ride. We truly believe that a full-fledged vehicle rental system can urbanise our transport and make travel convenient.</h4><br>
       <h4><strong>Reduced Congestion-Cleaner Air:</strong> The Eco-Ride initiative also benefits the system through better public spaces, reduced recurrent and non-recurrent congestion on busy routes and a more eco-friendly travel approach that ultimately saves your time and money. </h4>
     </div>
   </div>
 </div>
+<br>
 
 <!-- Services-->
 <div class = "container" id = "caro">
@@ -191,15 +218,15 @@
   <div class="carousel-inner">
     <div class="item active">
       <img src="
-https://irp-cdn.multiscreensite.com/a533f31f/dms3rep/multi/tablet/Young%20couple%20in%20yellow%20taxi-600x400.jpg" alt="Customer-Transport">
+https://irp-cdn.multiscreensite.com/a533f31f/dms3rep/multi/tablet/Young%20couple%20in%20yellow%20taxi-600x400.jpg" alt="Customer-Transport" class = "fixw">
     </div>
 
     <div class="item">
-      <img src="http://dz01iyojmxk8t.cloudfront.net/wp-content/uploads/2011/03/07004153/carpool.jpg" alt="Eco-Friendly">
+      <img src="http://dz01iyojmxk8t.cloudfront.net/wp-content/uploads/2011/03/07004153/carpool.jpg" alt="Eco-Friendly" class = "fixw2">
     </div>
 
     <div class="item">
-      <img src="http://images.indianexpress.com/2015/05/uber-cab.jpg" alt="Urban Convenience">
+      <img src="http://images.indianexpress.com/2015/05/uber-cab.jpg" alt="Urban Convenience" class = "fixw3">
     </div>
   </div>
 
@@ -238,10 +265,9 @@ https://irp-cdn.multiscreensite.com/a533f31f/dms3rep/multi/tablet/Young%20couple
         <div class="panel-footer">
           <h3>$19</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
         </div>
-      </div>      
-    </div>     
+      </div>
+    </div>
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -257,10 +283,9 @@ https://irp-cdn.multiscreensite.com/a533f31f/dms3rep/multi/tablet/Young%20couple
         <div class="panel-footer">
           <h3>$29</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
         </div>
-      </div>      
-    </div>       
+      </div>
+    </div>
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -276,12 +301,15 @@ https://irp-cdn.multiscreensite.com/a533f31f/dms3rep/multi/tablet/Young%20couple
         <div class="panel-footer">
           <h3>$49</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
+
         </div>
-      </div>      
-    </div>    
+      </div>
+    </div>
   </div>
 </div>
+
+          <a href="signUp.html" id="sign"><button class="btn btn-lg" id="signUp">Sign Up</button></a>
+
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
